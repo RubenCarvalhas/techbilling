@@ -51,6 +51,11 @@ const ComplianceTable = () => {
     );
   };
 
+  // Definir título
+  useEffect(() => {
+    document.title = "Invoices";
+  }, []);
+
   // Lida com a alteração de entrada para novos campos.
   const handleInputChange = (e) => {
     const { name, value } = e.target;

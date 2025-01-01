@@ -1,14 +1,35 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import "./App.css";
-import DoughnutChart from "./graphs/DoughnutChart"; // Importar o componente DoughnutChart
+import DoughnutChart from "./graphs/DoughnutChart";
 import Dashboard from "./dashboard_page/Dashboard";
 import Compliances from "./compliances_page/Compliances";
+
+const Home = () => {
+  React.useEffect(() => {
+    document.title = "Homepage";
+  }, []);
+
+  return (
+    <div className="hero-container">
+      <p className="hero-text">
+        TechBilling
+        <br />
+        Metrics
+        <br />
+        at a<br />
+        Click Away
+      </p>
+      <div className="doughnutchart-container-large">
+        <DoughnutChart />
+      </div>
+    </div>
+  );
+};
 
 const App = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Função para alternar o estado do menu hambúrguer (aberto/fechado)
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -16,12 +37,8 @@ const App = () => {
   return (
     <Router>
       <div className="page-container">
-        {" "}
-        {/* Container principal para o layout flex */}
-        {/* Cabeçalho */}
         <header className="header">
           <h1 className="logo">TechBilling</h1>
-          {/* Menu hambúrguer para dispositivos móveis */}
           <div className="hamburger-menu" onClick={toggleMenu}>
             <div></div>
             <div></div>
@@ -29,7 +46,6 @@ const App = () => {
           </div>
           <nav className={`nav ${isMenuOpen ? "active" : ""}`}>
             <ul>
-              {/* Links de navegação */}
               <li>
                 <Link to="/" className="link">
                   Home
@@ -48,32 +64,11 @@ const App = () => {
             </ul>
           </nav>
         </header>
-        {/* Definição das rotas */}
         <Routes>
-          <Route
-            path="/"
-            element={
-              <div className="hero-container">
-                {/* Texto principal da página Home */}
-                <p className="hero-text">
-                  TechBilling
-                  <br />
-                  Metrics
-                  <br />
-                  at a<br />
-                  Click Away
-                </p>
-                <div className="doughnutchart-container-large">
-                  <DoughnutChart />
-                </div>
-              </div>
-            }
-          />
-          {/* Outras rotas da página */}
+          <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/compliances" element={<Compliances />} />
         </Routes>
-        {/* Rodapé */}
         <footer className="footer">
           <div className="info">
             <p>Morada: Avenida das Estrelas, nº 42, Porto Alegre, 1234-567 </p>
