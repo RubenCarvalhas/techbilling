@@ -1,0 +1,55 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+ /* Dispor os itens verticalmente */
+  align-items: center;
+ /* Centraliza os gráficos */
+  padding: 20px;
+  margin-top: 100px;
+}
+.dashboard > .graph-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+ /* Alinhar os gráficos verticalmente */
+}
+.monthly-graph {
+  width: 100%;
+ /* Manter o primeiro gráfico responsivo */
+  height: 100px;
+}
+.invoices-graph-container {
+  display: flex;
+ /* Utilizar flexbox para alinhar os gráficos lado a lado */
+  justify-content: space-between;
+ /* Espaçamento entre os gráficos */
+  width: 100%;
+}
+.invoices-graph {
+  width: 48%;
+  height: 400px;
+  overflow: hidden;
+ /* Prevenir problemas de transbordo */
+  margin-top: 250px;
+}
+.doughnut-graph {
+  width: 48%;
+  height: 400px;
+  overflow: hidden;
+  margin-top: 270px;
+}
+/* Ajustar margens para ecrãs menores */
+@media (max-width: 886px) {
+  .invoices-graph-container {
+      flex-direction: column;
+     /* Empilhar os gráficos verticalmente em ecrãs menores */
+      margin-top: 250px;
+ }
+  .invoices-graph, .doughnut-graph {
+      width: 100%;
+     /* Tornar a largura total em ecrãs pequenos */
+      margin-top: 20px;
+      height: 250px;
+ }
+}

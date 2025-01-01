@@ -1,0 +1,26 @@
+{
+    "requirements": [
+      {
+        "id": 1,
+        "name": "Compliance 1",
+        "description": "Description for Compliance 1",
+        "deadline": "2024-12-31",
+        "status": "pending"
+      },
+      {
+        "id": 2,
+        "name": "Compliance 2",
+        "description": "Description for Compliance 2",
+        "deadline": "2024-11-15",
+        "status": "completed"
+      },
+      {
+        "id": 3,
+        "name": "Compliance 3",
+        "description": "Description for Compliance 3",
+        "deadline": "2024-09-20",
+        "status": "canceled"
+      }
+    ]
+  }
+  

@@ -1,0 +1,256 @@
+/* Reset geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Estilização do corpo */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+  min-height: 100vh;
+ /* Garante que o corpo ocupe toda a altura da tela */
+  display: flex;
+  flex-direction: column;
+ /* Layout em coluna */
+  overflow-x: hidden;
+ /* Prevenir rolagem horizontal */
+}
+/* Container da página */
+.page-container {
+  display: flex;
+  flex-direction: column;
+ /* Layout em coluna */
+  flex-grow: 1;
+ /* Faz com que o container cresça para ocupar o espaço restante */
+  min-height: 100vh;
+ /* Garantir que ocupe pelo menos toda a altura da tela */
+}
+/* Cabeçalho */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10rem;
+  background-color: transparent;
+  width: 100%;
+  z-index: 10;
+  position: relative;
+ /* Cabeçalho com 'relative' para não interferir no layout */
+}
+/* Navegação */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav ul {
+  display: flex;
+ /* Garantir que os itens de navegação fiquem numa linha */
+  gap: 1.5rem;
+ /* Espaço entre os links */
+  list-style: none;
+ /* Remover pontos de lista */
+  padding: 0;
+ /* Remover o espaçamento padrão */
+}
+.nav .link {
+  text-decoration: none;
+  color: black;
+  font-size: 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  transition: background-color 0.3s ease;
+}
+/* Efeito ao passar o cursor */
+.nav .link:hover {
+  background-color: black;
+  color: white;
+}
+/* Logo */
+.logo {
+  font-size: 2rem;
+  font-family: 'Montserrat', monospace;
+  color: black;
+}
+/* Menu tipo hambúrguer */
+.hamburger-menu {
+  display: none;
+ /* Escondido em ecrãs maiores */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  position: fixed;
+ /* Posição fixa para permanecer visível */
+  top: 1rem;
+ /* Garantir que esteja sempre visível */
+  right: 1rem;
+ /* Garantir que esteja sempre visível */
+  z-index: 20;
+ /* Certificar que está acima da navegação */
+}
+/* Barras do menu hambúrguer */
+.hamburger-menu div {
+  width: 30px;
+  height: 4px;
+  background-color: black;
+}
+/* Container principal (Hero) */
+.hero-container {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translateY(-50%);
+  text-align: left;
+  width: 60%;
+ /* Garantir que o container não ultrapasse o limite */
+  display: flex;
+ /* Layout lado a lado para texto e gráfico circular em desktop */
+  flex-direction: row;
+ /* Lado a lado em desktop */
+  gap: 2rem;
+ /* Espaço entre o texto e o gráfico */
+}
+.hero-text {
+  font-size: 3rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #282c34;
+  flex: 1;
+ /* Garantir que o texto ocupe o espaço restante */
+  margin-top: 60px;
+}
+/* Rodapé */
+.footer {
+  padding: 1rem;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  text-align: center;
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+ /* Empilhar os itens do rodapé */
+  justify-content: center;
+ /* Alinhar o conteúdo verticalmente */
+  align-items: center;
+ /* Alinhar os itens horizontalmente */
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .footer {
+      padding: 1rem;
+      font-size: 1rem;
+     /* Ajustar o tamanho da fonte para dispositivos móveis */
+ }
+  .footer .info {
+      font-size: 0.9rem;
+     /* Reduzir o tamanho da fonte para os dados da empresa */
+      text-align: center;
+     /* Garantir que o texto fique centralizado em telas menores */
+ }
+  .footer p {
+      margin-bottom: 0.5rem;
+     /* Adicionar espaço entre os parágrafos */
+ }
+}
+@media (max-width: 480px) {
+  .footer {
+      padding: 0.5rem;
+     /* Reduzir o padding para telas menores */
+ }
+  .footer .info {
+      font-size: 0.8rem;
+     /* Reduzir ainda mais o tamanho da fonte */
+ }
+  .footer p {
+      margin-bottom: 0.2rem;
+     /* Menos espaço entre os parágrafos */
+ }
+}
+/* Estilos responsivos */
+@media (max-width: 768px) {
+ /* Ajustar cabeçalho para dispositivos móveis */
+  .header {
+      padding: 1rem 2rem;
+ }
+  .logo {
+      font-size: 1.5rem;
+ }
+ /* Mostrar menu "hambúrguer" */
+  .hamburger-menu {
+      display: flex;
+     /* Exibir o menu em ecrãs menores */
+ }
+ /* Esconder navegação por padrão */
+  .nav {
+      display: none;
+     /* Escondido por padrão */
+      flex-direction: column;
+     /* Empilhar itens verticalmente quando ativo */
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background-color: #f4f4f9;
+      width: 100%;
+     /* Ocupar toda a largura */
+      padding: 1rem;
+      text-align: center;
+      z-index: 10;
+ }
+ /* Mostrar navegação quando o menu está ativo */
+  .nav.active {
+      display: flex;
+ }
+  .nav ul {
+      flex-direction: column;
+     /* Garantir links empilhados verticalmente em dispositivos móveis */
+      gap: 1rem;
+ }
+  .nav .link {
+      padding: 1rem 0;
+ }
+ /* Seção Hero para dispositivos móveis */
+  .hero-container {
+      left: 5%;
+     /* Ajustar para garantir que fique visível */
+      top: 35%;
+      transform: translateY(-50%);
+      width: 90%;
+     /* Reduzir largura em dispositivos móveis */
+      flex-direction: column;
+     /* Empilhar texto e gráfico verticalmente */
+ }
+  .hero-text {
+      font-size: 2rem;
+ }
+}
+.doughnutchart-container-large {
+  height: 400px;
+  width: 400px;
+  margin-right: 200px;
+}
+@media (max-width: 480px) {
+  .hero-text {
+      font-size: 1.5rem;
+ }
+ /* Opcional: Adicionar algum espaço em torno do gráfico */
+  .hero-container {
+      text-align: center;
+      padding: 40px 0;
+ }
+  .hero-text {
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 40px;
+ }
+  .info {
+      text-align: left;
+ }
+}

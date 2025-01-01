@@ -1,0 +1,419 @@
+/* Estilos gerais para o body */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Container para o botão de criação de fatura */
+.create-compliance-btn-container {
+  margin-top: 40px;
+ /* Aumento da margem para dar mais espaço em relação ao cabeçalho */
+  margin-bottom: 20px;
+  text-align: right;
+ /* Alinha o botão à direita */
+  width: 100%;
+ /* Garante que ocupe toda a largura do container */
+}
+/* Estilos para o botão de criação de fatura */
+.create-compliance-btn-container .create-compliance-btn {
+  background-color: #36a2eb;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+/* Efeito ao passar o cursor sobre o botão */
+.create-compliance-btn-container .create-compliance-btn:hover {
+  background-color: #2483c7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+/* Estilos para a tabela de dados de faturas */
+.compliance-table-container {
+  padding: 40px;
+  margin: 40px auto;
+  width: 100%;
+  max-width: none;
+  margin-top: 90px;
+ /* Adiciona espaço entre o cabeçalho e a tabela */
+  margin-left: 20px;
+  font-size: 16px;
+}
+/* Título para a tabela */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* A própria tabela */
+.compliance-table {
+  width: 100%;
+  margin-top: 40px;
+  border-collapse: collapse;
+}
+/* Células e cabeçalhos da tabela */
+.compliance-table th, .compliance-table td {
+  color: #333;
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+/* Estilos para o indicador de status */
+.status-indicator {
+  font-size: 16px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+.pending {
+  color: rgb(0, 0, 0);
+  background-color: #f7a901b6;
+}
+.completed {
+  color: white;
+  background-color: #28a745;
+}
+.canceled {
+  color: white;
+  background-color: #dc3545;
+}
+/* Estilo para todos os campos de entrada, para garantir consistência */
+input[type="text"], input[type="number"], select, textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+input[type="text"]:focus, input[type="number"]:focus, select:focus, textarea:focus {
+  outline: none;
+ /* Remove o contorno padrão */
+  border-color: #4CAF50;
+ /* Mudança na cor da borda ao focar */
+  box-shadow: 0 0 5px rgba(0, 128, 0, 0.2);
+}
+/* Estilos para os botões de status */
+.status-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.status-btn.close {
+  background-color: #838583b6;
+  color: black;
+}
+.status-btn.pending {
+  background-color: #f7a901b6;
+  color: black;
+}
+.status-btn.completed {
+  background-color: #28a745;
+  color: white;
+}
+.status-btn.canceled {
+  background-color: #dc3545;
+  color: white;
+}
+.status-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+/* Estilos para o botão de requisitos */
+.help-btn {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  font-size: 18px;
+  cursor: pointer;
+}
+/* Estilos para o sobrepor do popup */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Estilos para o conteúdo do popup */
+.popup-content {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+/* Título do popup */
+.popup-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* Campos de entrada e formulário dentro do popup */
+.popup-content input, .popup-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+/* Estilos para os botões do popup */
+.popup-content button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+}
+.popup-content button:hover {
+  background-color: #0056b3;
+}
+/* Estilos para o botão de fecho do popup */
+.popup-content .close-btn {
+  background-color: #ff5c51;
+  margin-top: 20px;
+}
+.popup-content .close-btn:hover {
+  background-color: #d73833;
+}
+/* Estilos base para o botão Preview (estado desativado - cinza) */
+.popup-content .preview-btn {
+  background-color: #ccc;
+  cursor: not-allowed;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  margin-right: 0;
+}
+/* Quando todas as checkboxes estiverem marcadas (estado ativado - azul) */
+.popup-content .preview-btn.enabled {
+  background-color: #007bff;
+  cursor: pointer;
+}
+/* Impedir o efeito de hover quando o botão está desativado */
+.popup-content .preview-btn.disabled:hover {
+  background-color: #ccc !important;
+}
+/* Ativar o efeito de hover para o botão ativado */
+.popup-content .preview-btn.enabled:hover {
+  background-color: #0056b3;
+}
+/* Alinhar o botão Preview à direita */
+.popup-content .preview-btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+ /* Espaço opcional acima do botão */
+}
+/* Estilos atualizados para o item de requisitos no popup */
+.help-item {
+  display: flex;
+  align-items: center;
+ /* Garantir alinhamento vertical do rótulo e checkbox */
+  gap: 10px;
+ /* Adicionar espaço entre o checkbox e o rótulo */
+}
+/* Ajustar o contêiner do rótulo para garantir alinhamento consistente */
+.help-item-text {
+  flex: 1;
+ /* Permitir que o rótulo se ajuste dinamicamente */
+  word-wrap: break-word;
+ /* Lidar com rótulos longos de forma adequada */
+}
+/* Contêiner do checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center;
+ /* Centralizar o checkbox verticalmente */
+  justify-content: center;
+}
+/* Aparência personalizada do checkbox */
+.checkbox-custom {
+  height: 20px;
+  width: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+/* Esconder o input checkbox padrão */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+}
+/* Quando marcado, atualizar a aparência */
+.checkbox-container input:checked ~ .checkbox-custom {
+  background-color: #4caf50;
+  transform: scale(1.1);
+ /* Adicionar um efeito de escala sutil */
+}
+.checkbox-container input:checked ~ .checkbox-custom:after {
+  display: block;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+/* Adicionar contorno visível para foco (acessibilidade) */
+.checkbox-container input:focus-visible ~ .checkbox-custom {
+  outline: 2px solid #007bff;
+  outline-offset: 4px;
+}
+/* Efeito hover nos checkboxes */
+.checkbox-container input:hover ~ .checkbox-custom {
+  border-color: #4caf50;
+}
+/* Animação FadeIn para o popup */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.9);
+ }
+  to {
+      opacity: 1;
+      transform: scale(1);
+ }
+}
+/* Media Queries para responsividade */
+@media screen and (max-width: 768px) {
+  .compliance-table-container {
+      padding: 20px;
+ }
+  .compliance-table th, .compliance-table td {
+      font-size: 14px;
+ }
+  .compliance-table {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+ }
+  .compliance-table th:nth-child(4), .compliance-table td:nth-child(4) {
+      display: none;
+ }
+  .help-btn {
+      font-size: 16px;
+      padding: 3px 6px;
+ }
+  .compliance-table td {
+      display: block;
+      width: 100%;
+      position: relative;
+      text-align: right;
+ }
+  .compliance-table td::before {
+      content: attr(data-label);
+      position: absolute;
+      left: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+ }
+ /* Estilos específicos para o Popup de requisitos */
+  .popup-overlay {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+ }
+ /* Estilos para o conteúdo do popup de requisitos */
+  .popup-content {
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      width: 400px;
+      max-width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.3s ease-in-out;
+ }
+ /* Título do popup de requisitos */
+  .popup-content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+ }
+ /* Lista de itens de requisitos no Popup */
+  .popup-content ul {
+      list-style-type: none;
+      padding: 0;
+ }
+ /* Linha de itens de requisitos */
+  .help-item {
+      display: flex;
+      align-items: center;
+     /* Alinhar os itens numa linha */
+      justify-content: flex-start;
+     /* Garantir que comecem pela esquerda */
+      margin-bottom: 10px;
+ }
+ /* Nome do item de requisitos */
+  .help-item-details {
+      font-weight: bold;
+      margin-right: 15px;
+ }
+ /* Contêiner do Checkbox do item de requisitos */
+  .checkbox-container {
+      display: flex;
+      flex-direction: row;
+     /* Manter os checkboxes numa linha */
+      justify-content: flex-start;
+     /* Alinhar os checkboxes à esquerda */
+      align-items: center;
+     /* Centralizar os checkboxes verticalmente */
+      margin-bottom: 10px;
+ }
+ /* Estilos personalizados para o checkbox */
+  .checkbox-container input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+ }
+  .checkbox-custom {
+      height: 20px;
+      width: 20px;
+      background-color: #f0f0f0;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.3s;
+      margin-right: 30px;
+     /* Aumentar o margin-right para afastar mais o checkbox */
+ }
+  .checkbox-container input:checked ~ .checkbox-custom {
+      background-color: #4caf50;
+      transform: scale(1.2);
+ }
+ /* Adicionar o check mark quando marcado */
+  .checkbox-custom:after {
+      content: "";
+      position: absolute;
+      display: none;
+ }
+  .checkbox-container input:checked ~ .checkbox-custom:after {
+      display: block;
+ }
+  .checkbox-container .checkbox-custom:after {
+      left: 8px;
+      top: 5px;
+      width: 8px;
+      height: 15px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      transform: rotate(45deg);
+ }
+}
