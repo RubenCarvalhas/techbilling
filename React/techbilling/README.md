@@ -1,31 +1,33 @@
 # TechBilling
 
-A modern web application for managing billing and client data, built with **React**, **TypeScript**, and **Vite**. This project integrates **Chart.js** for visualizations and **React Router** for navigation between pages.
+Uma aplicação web moderna para gerir faturação e dados de clientes, construída com **React**, **TypeScript** e **Vite**. Este projeto integra o **Chart.js** para visualizações e o **React Router** para navegação entre páginas.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-- **React**: A JavaScript library for building user interfaces.
-- **TypeScript**: A superset of JavaScript that adds static types.
-- **Vite**: A fast, modern build tool for frontend development.
-- **Chart.js**: A library for creating interactive and customizable charts.
-- **React Router**: A library for handling routing and navigation in React apps.
-- **ESLint**: A tool for identifying and fixing problems in JavaScript code.
-- **react-burger-menu**: A sidebar menu component for React.
-- **react-chartjs-2**: A React wrapper for Chart.js, enabling easy chart integration.
-- **@types/react**: TypeScript type definitions for React.
-- **@types/react-dom**: TypeScript type definitions for React DOM.
-- **@types/react-router-dom**: TypeScript type definitions for React Router DOM.
-- **eslint-plugin-react**: A plugin for ESLint that includes React-specific linting rules.
-- **typescript-eslint**: TypeScript support for ESLint to lint TypeScript files.
+- **React**: Uma biblioteca JavaScript para construção de interfaces de utilizador.
+- **TypeScript**: Um superconjunto de JavaScript que adiciona tipos estáticos.
+- **Vite**: Uma ferramenta moderna e rápida para construção e desenvolvimento frontend.
+- **Chart.js**: Uma biblioteca para criar gráficos interativos e personalizáveis.
+- **React Router**: Uma biblioteca para gerir o routing e navegação em aplicações React.
+- **ESLint**: Uma ferramenta para identificar e corrigir problemas no código JavaScript.
+- **react-burger-menu**: Um componente de menu lateral para React.
+- **react-chartjs-2**: Um wrapper React para o Chart.js, facilitando a integração de gráficos.
+- **@types/react**: Definições de tipo TypeScript para React.
+- **@types/react-dom**: Definições de tipo TypeScript para o React DOM.
+- **@types/react-router-dom**: Definições de tipo TypeScript para o React Router DOM.
+- **eslint-plugin-react**: Um plugin para ESLint que inclui regras de linting específicas para React.
+- **typescript-eslint**: Suporte TypeScript para ESLint, permitindo a verificação de código TypeScript.
 
-## Installation: 
+## Instalação:
+Fazer o commando npm install
+
+```bash
 npm install
+```
 
-## Features
+##Como iniciar:
+Após a instalação fazer o comando cd techbilling
+Após fazer o comando mencionado acima fazer npm run dev
 
-- **Charts**: Visualizations using **Chart.js** integrated with React via the **react-chartjs-2** wrapper (Doughnut, Bar, Line charts).
-- **Responsive Design**: Components that adapt to various screen sizes.
-- **Navigation**: Uses **React Router** for page navigation (e.g., Dashboard, Compliances).
-- **Linting**: **ESLint** for maintaining consistent code style and identifying potential issues.
-- **Mock API Server**: For local development, the project includes a mock API using **json-server**.
+
 
